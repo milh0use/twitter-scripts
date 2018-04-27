@@ -21,5 +21,6 @@ api = twitter.Api(consumer_key=config['main']['consumer_key'],
                       access_token_secret=config['main']['access_token_secret'])
 
 print("Scanning Twitter Friends list of " + user)
-users = api.GetFriends(user_id=user)
-print([u.name for u in users])
+users = api.GetFriends(screen_name=user)
+for user in users:
+    print(user.name)
